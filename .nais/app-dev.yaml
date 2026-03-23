@@ -1,7 +1,7 @@
 apiVersion: "nais.io/v1alpha1"
 kind: "Application"
 metadata:
-  name: familie-tmp-test
+  name: familie-tmp-test-copy
   namespace: teamfamilie
   labels:
     team: teamfamilie
@@ -17,7 +17,7 @@ spec:
     sqlInstances:
       - type: POSTGRES_17 # IF This is changed, all data will be lost. Read on nais.io how to upgrade
         tier: db-custom-1-3840
-        name: familie-tmp-test
+        name: familie-tmp-test-copy
         autoBackupHour: 2
         pointInTimeRecovery: false
         diskAutoresize: true
