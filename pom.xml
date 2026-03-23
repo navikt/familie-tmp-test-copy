@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>no.nav.familie</groupId>
-    <artifactId>familie-tmp-test</artifactId>
+    <artifactId>familie-tmp-test-copy</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
     <parent>
@@ -47,7 +47,7 @@
     </dependencies>
 
     <build>
-        <finalName>familie-tmp-test</finalName>
+        <finalName>familie-tmp-test-copy</finalName>
         <sourceDirectory>${project.basedir}/src/main/kotlin</sourceDirectory>
         <testSourceDirectory>${project.basedir}/src/test/kotlin</testSourceDirectory>
         <plugins>
