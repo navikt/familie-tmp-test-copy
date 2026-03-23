@@ -1,0 +1,37 @@
+apiVersion: "nais.io/v1alpha1"
+kind: "Application"
+metadata:
+  name: familie-tmp-test
+  namespace: teamfamilie
+  labels:
+    team: teamfamilie
+  annotations:
+    nginx.ingress.kubernetes.io/proxy-next-upstream-tries: '1'
+spec:
+  image: "{{image}}"
+  port: 8094
+
+  vault:
+    enabled: false
+  gcp: # Database
+    sqlInstances:
+      - type: POSTGRES_17 # IF This is changed, all data will be lost. Read on nais.io how to upgrade
+        tier: db-custom-1-3840
+        name: familie-tmp-test
+        autoBackupHour: 2
+        pointInTimeRecovery: false
+        diskAutoresize: true
+        highAvailability: false
+        databases:
+          - name: familie-baks-infotrygd-feed
+            envVarPrefix: DB
+
+  replicas:
+    min: 0
+    max: 0
+  resources:
+    limits:
+      memory: 544Mi
+    requests:
+      memory: 512Mi
+      cpu: 156m
