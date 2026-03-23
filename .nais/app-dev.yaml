@@ -9,7 +9,7 @@ metadata:
     nginx.ingress.kubernetes.io/proxy-next-upstream-tries: '1'
 spec:
   image: "{{image}}"
-  port: 80941
+  port: 8094
 
   vault:
     enabled: false
